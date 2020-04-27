@@ -1,29 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework;
 using MetroFramework.Forms;
 using MusicFinderBL.Model;
 
 namespace MusicFinderView {
     public partial class MainForm : MetroForm {
+
+        Finder finder = new Finder();
         public MainForm() {
             InitializeComponent();
+
+            finder.ParseFailed += ParseFailed;
+            finder.ParseSuccess += ParseSuccess;
+            finder.DownloadSuccess += DownloadSuccess;
+            finder.BarIncrement += BarIncrement;
+        }
+        private void BarIncrement(int procPercentage, long bytesReceived, long totalBytes) {
+            metroProgressBar1.Value = procPercentage;
+            progressLabel.Text = bytesReceived / 1024 + "/" + totalBytes / 1024 + "Кб";
         }
 
-        private void exitButton_Click(object sender, EventArgs e) {
-            this.Close();
+        private void DownloadSuccess() {
+
+        }
+        private void ParseFailed() {
+
         }
 
-        private void downloadButton_Click(object sender, EventArgs e) {
-            Finder finder = new Finder(searchTextBox.Text);
-            searchTextBox.Text = finder.GetHTML(searchTextBox.Text);
+        private void ParseSuccess() {
+
+        }
+
+        private void DownloadButton_Click(object sender, EventArgs e) {
+            finder.SearchRequest = searchTextBox.Text;
+            string s = finder.GetHTML(searchTextBox.Text);
+            finder.ParseAsync(s);
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e) {
+            SettingsView view = new SettingsView();
         }
     }
 }

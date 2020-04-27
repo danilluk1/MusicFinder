@@ -26,66 +26,107 @@
             MetroFramework.Controls.MetroLabel metroLabel1;
             this.searchTextBox = new MetroFramework.Controls.MetroTextBox();
             this.downloadButton = new MetroFramework.Controls.MetroButton();
-            this.exitButton = new MetroFramework.Controls.MetroButton();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.downloadBox = new System.Windows.Forms.ListBox();
+            this.settingsButton = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
+            this.progressLabel = new MetroFramework.Controls.MetroLabel();
             metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(15, 15);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(885, 23);
-            this.searchTextBox.TabIndex = 0;
-            // 
-            // downloadButton
-            // 
-            this.downloadButton.Location = new System.Drawing.Point(906, 6);
-            this.downloadButton.Name = "downloadButton";
-            this.downloadButton.Size = new System.Drawing.Size(73, 33);
-            this.downloadButton.TabIndex = 1;
-            this.downloadButton.Text = "Скачать!";
-            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(986, 6);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(36, 32);
-            this.exitButton.TabIndex = 2;
-            this.exitButton.Text = "X";
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // metroLabel1
             // 
             metroLabel1.AutoSize = true;
-            metroLabel1.Location = new System.Drawing.Point(15, 64);
+            metroLabel1.Location = new System.Drawing.Point(5, 33);
             metroLabel1.Name = "metroLabel1";
             metroLabel1.Size = new System.Drawing.Size(96, 19);
             metroLabel1.TabIndex = 3;
             metroLabel1.Text = "Мои загрузки:";
             // 
-            // listView1
+            // searchTextBox
             // 
-            this.listView1.Location = new System.Drawing.Point(15, 87);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(986, 658);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.searchTextBox.Location = new System.Drawing.Point(5, 7);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(666, 23);
+            this.searchTextBox.TabIndex = 0;
+            // 
+            // downloadButton
+            // 
+            this.downloadButton.Location = new System.Drawing.Point(677, 8);
+            this.downloadButton.Name = "downloadButton";
+            this.downloadButton.Size = new System.Drawing.Size(59, 22);
+            this.downloadButton.TabIndex = 1;
+            this.downloadButton.Text = "Скачать!";
+            this.downloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
+            // 
+            // downloadBox
+            // 
+            this.downloadBox.FormattingEnabled = true;
+            this.downloadBox.Location = new System.Drawing.Point(5, 52);
+            this.downloadBox.Name = "downloadBox";
+            this.downloadBox.Size = new System.Drawing.Size(413, 693);
+            this.downloadBox.TabIndex = 4;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(742, 8);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(65, 23);
+            this.settingsButton.TabIndex = 6;
+            this.settingsButton.Text = "Настройки";
+            this.settingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(425, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(592, 709);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(813, 7);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(65, 23);
+            this.metroButton2.TabIndex = 8;
+            this.metroButton2.Text = "Помощь";
+            // 
+            // metroProgressBar1
+            // 
+            this.metroProgressBar1.Location = new System.Drawing.Point(98, 33);
+            this.metroProgressBar1.Name = "metroProgressBar1";
+            this.metroProgressBar1.Size = new System.Drawing.Size(421, 16);
+            this.metroProgressBar1.TabIndex = 9;
+            // 
+            // progressLabel
+            // 
+            this.progressLabel.AutoSize = true;
+            this.progressLabel.Location = new System.Drawing.Point(525, 30);
+            this.progressLabel.Name = "progressLabel";
+            this.progressLabel.Size = new System.Drawing.Size(0, 0);
+            this.progressLabel.TabIndex = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.progressLabel);
+            this.Controls.Add(this.metroProgressBar1);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.settingsButton);
+            this.Controls.Add(this.downloadBox);
             this.Controls.Add(metroLabel1);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.searchTextBox);
             this.Name = "MainForm";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow;
             this.Style = MetroFramework.MetroColorStyle.Black;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,8 +136,12 @@
 
         private MetroFramework.Controls.MetroTextBox searchTextBox;
         private MetroFramework.Controls.MetroButton downloadButton;
-        private MetroFramework.Controls.MetroButton exitButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListBox downloadBox;
+        private MetroFramework.Controls.MetroButton settingsButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
+        private MetroFramework.Controls.MetroLabel progressLabel;
     }
 }
 
