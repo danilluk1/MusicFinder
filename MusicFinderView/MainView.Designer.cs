@@ -28,12 +28,11 @@
             this.downloadButton = new MetroFramework.Controls.MetroButton();
             this.downloadBox = new System.Windows.Forms.ListBox();
             this.settingsButton = new MetroFramework.Controls.MetroButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.progressLabel = new MetroFramework.Controls.MetroLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -64,9 +63,9 @@
             // downloadBox
             // 
             this.downloadBox.FormattingEnabled = true;
-            this.downloadBox.Location = new System.Drawing.Point(5, 52);
+            this.downloadBox.Location = new System.Drawing.Point(5, 65);
             this.downloadBox.Name = "downloadBox";
-            this.downloadBox.Size = new System.Drawing.Size(413, 693);
+            this.downloadBox.Size = new System.Drawing.Size(413, 680);
             this.downloadBox.TabIndex = 4;
             // 
             // settingsButton
@@ -78,14 +77,6 @@
             this.settingsButton.Text = "Настройки";
             this.settingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(425, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(592, 709);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // metroButton2
             // 
             this.metroButton2.Location = new System.Drawing.Point(813, 7);
@@ -96,7 +87,7 @@
             // 
             // metroProgressBar1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(98, 33);
+            this.metroProgressBar1.Location = new System.Drawing.Point(104, 36);
             this.metroProgressBar1.Name = "metroProgressBar1";
             this.metroProgressBar1.Size = new System.Drawing.Size(421, 16);
             this.metroProgressBar1.TabIndex = 9;
@@ -109,15 +100,22 @@
             this.progressLabel.Size = new System.Drawing.Size(0, 0);
             this.progressLabel.TabIndex = 10;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(425, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(589, 699);
+            this.panel1.TabIndex = 11;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.metroProgressBar1);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.downloadBox);
             this.Controls.Add(metroLabel1);
@@ -126,7 +124,6 @@
             this.Name = "MainForm";
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.SystemShadow;
             this.Style = MetroFramework.MetroColorStyle.Black;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,10 +135,10 @@
         private MetroFramework.Controls.MetroButton downloadButton;
         private System.Windows.Forms.ListBox downloadBox;
         private MetroFramework.Controls.MetroButton settingsButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
         private MetroFramework.Controls.MetroLabel progressLabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

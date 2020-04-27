@@ -23,40 +23,65 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            MetroFramework.Controls.MetroLabel licenseLabel;
+            this.grBox = new System.Windows.Forms.GroupBox();
+            this.pathButton = new MetroFramework.Controls.MetroButton();
+            this.pathTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox1.SuspendLayout();
+            this.formatComboBox = new System.Windows.Forms.ComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            licenseLabel = new MetroFramework.Controls.MetroLabel();
+            this.grBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // licenseLabel
             // 
-            this.groupBox1.Controls.Add(this.metroLabel2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 456);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Настройки";
+            licenseLabel.AutoSize = true;
+            licenseLabel.Location = new System.Drawing.Point(373, 461);
+            licenseLabel.Name = "licenseLabel";
+            licenseLabel.Size = new System.Drawing.Size(204, 19);
+            licenseLabel.TabIndex = 2;
+            licenseLabel.Text = "danilluk1 | justovich@outlook.com";
             // 
-            // metroLabel1
+            // grBox
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(4, 2);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(115, 19);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Music Finder v1.00";
+            this.grBox.Controls.Add(this.pathButton);
+            this.grBox.Controls.Add(this.pathTextBox);
+            this.grBox.Controls.Add(this.metroLabel3);
+            this.grBox.Controls.Add(this.metroLabel2);
+            this.grBox.Controls.Add(this.formatComboBox);
+            this.grBox.Location = new System.Drawing.Point(4, 24);
+            this.grBox.Name = "grBox";
+            this.grBox.Size = new System.Drawing.Size(363, 456);
+            this.grBox.TabIndex = 0;
+            this.grBox.TabStop = false;
+            this.grBox.Text = "Настройки";
             // 
-            // comboBox1
+            // pathButton
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(212, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.pathButton.Location = new System.Drawing.Point(316, 55);
+            this.pathButton.Name = "pathButton";
+            this.pathButton.Size = new System.Drawing.Size(24, 23);
+            this.pathButton.TabIndex = 4;
+            this.pathButton.Text = "...";
+            this.pathButton.Click += new System.EventHandler(this.PathButton_Click);
+            // 
+            // pathTextBox
+            // 
+            this.pathTextBox.Location = new System.Drawing.Point(121, 55);
+            this.pathTextBox.Name = "pathTextBox";
+            this.pathTextBox.Size = new System.Drawing.Size(189, 23);
+            this.pathTextBox.TabIndex = 3;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(7, 59);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Путь загрузки:";
             // 
             // metroLabel2
             // 
@@ -67,16 +92,40 @@
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Формат данных:";
             // 
+            // formatComboBox
+            // 
+            this.formatComboBox.FormattingEnabled = true;
+            this.formatComboBox.Items.AddRange(new object[] {
+            "Байт",
+            "Килобайт",
+            "Мегабайт",
+            "Гигабайт"});
+            this.formatComboBox.Location = new System.Drawing.Point(121, 19);
+            this.formatComboBox.Name = "formatComboBox";
+            this.formatComboBox.Size = new System.Drawing.Size(219, 21);
+            this.formatComboBox.TabIndex = 0;
+            this.formatComboBox.SelectedIndexChanged += new System.EventHandler(this.FormatComboBox_SelectedIndexChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(4, 2);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(115, 19);
+            this.metroLabel1.TabIndex = 1;
+            this.metroLabel1.Text = "Music Finder v1.00";
+            // 
             // SettingsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 494);
+            this.ClientSize = new System.Drawing.Size(586, 488);
+            this.Controls.Add(licenseLabel);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grBox);
             this.Name = "SettingsView";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grBox.ResumeLayout(false);
+            this.grBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,9 +133,12 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox formatComboBox;
+        private MetroFramework.Controls.MetroButton pathButton;
+        private MetroFramework.Controls.MetroTextBox pathTextBox;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
